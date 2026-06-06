@@ -28,5 +28,5 @@ latest_posts:
 
 I am a Computer Science student at Beijing Normal–Hong Kong Baptist University. 
 
-My research interests lie in <span style="color: #b916b0;">Computer Vision</span>, with a particular focus on image generation, diffusion models, and frequency-domain analysis. I am interested in understanding how visual information is represented and transformed in the frequency space, especially the roles of low-frequency structure and high-frequency details in generated images.
+My research interests lie in <span style="color: #b916b0;">Computer Vision</span>, with a particular focus on <span style="color: #b916b0;">image generation</span>, <span style="color: #b916b0;">diffusion models</span>, and <span style="color: #b916b0;">frequency-domain analysis</span>. I am interested in understanding how visual information is represented and transformed in the frequency space, especially the roles of low-frequency structure and high-frequency details in generated images.
 
