@@ -42,9 +42,3 @@ I am interested in understanding how visual information is represented and trans
 
 - **June 5, 2026**  
   I created my website! 👋
-
-- **June 5, 2026**  
-  I created my website! 👋
-
-- **June 5, 2026**  
-  I created my website! 👋
