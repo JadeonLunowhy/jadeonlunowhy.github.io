@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /teaching/
+permalink: /fragments/
 title: Fragments
 description: A collection of fleeting thoughts, ideas and small happenings from daily life
 nav: true
