@@ -2,7 +2,7 @@
 layout: page
 permalink: /teaching/
 title: Fragments
-description: A collection of fleeting thoughts, unfinished ideas, and daily digital scribbles.
+description: A collection of fleeting thoughts, ideas, random details and small happenings from daily life
 nav: true
 nav_order: 6
 calendar: true
