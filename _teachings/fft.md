@@ -1,6 +1,6 @@
 ---
 layout: course
-title: About Frequency domain and FFT
+title: About my first work
 description: This note records my understanding and insights into certain concepts while completing my first task (hidden image).
 ---
 
