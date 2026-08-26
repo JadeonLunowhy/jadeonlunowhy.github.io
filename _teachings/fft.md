@@ -8,7 +8,7 @@ description: This note records my understanding and insights into certain concep
 
 目前第一个work基本接近尾声了，论文OK了，还差一个代码仓库没弄好，现在来简单记录下做了什么事
 
-## motivation
+## Motivation
 
 读了[PTDiffusion](https://xianggao1102.github.io/PTDiffusion_webpage/)后感觉这个隐藏图任务还是比较有意思的：给一张ref图，一句prompt，然后生成的图片把ref图藏在prompt生成的这个场景中。具体例子可以看下面的图:
 
@@ -32,14 +32,17 @@ description: This note records my understanding and insights into certain concep
 | **相位 (Phase)** | 决定大面积区域/宏观主体的**位置与空间布局** | 决定局部边缘、细微纹理的**精确空间位置** |
 | **幅值 (Magnitude)** | 决定整体的**亮度分布与基调能量** | 决定边缘与纹理的**对比度、锐度与丰富度** |
 
-后面又读到几篇做onestep T2I的
+后面又读到几篇做onestep T2I的文章，于是开始转向从速度的角度做improve，在和老师的几次讨论下觉得可以用onestep的模型去试试能不能完成这个隐藏图任务，果然是可以的，基本idea就此形成
 
+## What I DO
 
+我设计的这个架构还是比较朴素的，这也是听了老师给我的建议（他说一般领域内的第一个方法，通常比较设计上可以非常朴素的，不要把它想的很难）。而且onestep的T2I模型可以入手的地方实在不多
 
-## Prerequisite
+简单来说，我设计了一个叫sspf的组件用来融合参考图的结构到噪声图中，然后分别在进入onestep的unet和unet的midblock使用sspf，具体流程如下：
 
-- Basic programming knowledge (preferably in Python)
-- Introductory statistics
-- Comfort with basic algebra
+<p align="center">
+  <img src="/assets/images/2.png" alt="hiddenimage" style="max-width: 80%; height: auto;">
+</p>
+
 
 ## Textbooks
