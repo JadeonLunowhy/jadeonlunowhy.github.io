@@ -48,4 +48,6 @@ description: This note records my understanding and insights into certain concep
 
 在midblock重新使用sspf也是为了让图像的最终效果更好：如果仅在最开始用sspf，由于图像的分辨率较高，phase展示的结构边缘信息会非常明显，导致最终生图出现不自然的怪异边缘伪影。相反，midblock他的分辨度是整个去噪过程中最低的，于是我就在midblock在用一次sspf，这样能够显著圆滑原本生硬的边界
 
+
+
 ## Textbooks
