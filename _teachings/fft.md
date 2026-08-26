@@ -71,7 +71,7 @@ description: This note records my understanding and insights into certain concep
 
 - 迁移能力很重要，一篇文章，一种方法，完全是可以迁移到很多其他地方的，就看你能不能想到
 
-目前先写这么多，等文章有结果了再把整个项目代码放出来
+目前先写这么多，静候佳音吧
 
 
 
