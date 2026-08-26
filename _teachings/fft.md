@@ -36,7 +36,7 @@ description: This note records my understanding and insights into certain concep
 
 ## What Did I Do
 
-我设计的这个架构还是比较朴素的，这也是听了老师给我的建议（他说一般领域内的第一个方法，通常比较设计上可以非常朴素的，不要把它想的很难）。而且onestep的T2I模型可以入手的地方实在不多
+我设计的这个架构（OnePhase）还是比较朴素的，这也是听了老师给我的建议（他说一般领域内的第一个方法，通常比较设计上可以非常朴素的，不要把它想的很难）。而且onestep的T2I模型可以入手的地方实在不多
 
 简单来说，我设计了一个叫sspf的组件用来融合参考图的结构到噪声图中，然后分别在进入onestep的unet前和unet的midblock使用sspf，具体流程如下：
 
@@ -48,6 +48,8 @@ description: This note records my understanding and insights into certain concep
 
 在midblock重新使用sspf也是为了让图像的最终效果更好：如果仅在最开始用sspf，由于图像的分辨率较高，phase展示的结构边缘信息会非常明显，导致最终生图出现不自然的怪异边缘伪影。相反，midblock他的分辨度是整个去噪过程中最低的，于是我就在midblock在用一次sspf，这样能够显著圆滑原本生硬的边界
 
+框架本来其实还加了一个在skip connection的调控，但是发现效果和不放没太大差别，于是就删了
 
+至于最终生成图的效果，我还是很惊喜的，OnePhase生成的图像效果在多项指标上都远超ptdiffusion，也进行了userstudy，具体的实验在文章中写的比较详细，我就不再描述。
 
 ## Textbooks
