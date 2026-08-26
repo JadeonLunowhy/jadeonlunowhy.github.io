@@ -61,3 +61,8 @@ description: This note records my understanding and insights into certain concep
 
 ## Reflection and Summary
 
+这算是我第一次完整的完成一项科研工作，也让我知道科研没有想象的那么遥不可及，只要专心去做，一定会有结果的，目前虽然不知道文章能不能中，但是最宝贵的还是自己完成一个work的过程，从读论文，找idea，设计方法，做实验，写论文，收获实在太多。这里尤其要感谢我的导师，给我提供经费租服务器，在整个过程中持续给我建议，帮我改论文。
+
+
+
+
