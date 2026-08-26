@@ -1,4 +1,3 @@
-````markdown
 ---
 layout: page
 title: Course Timetable Inquiry System
