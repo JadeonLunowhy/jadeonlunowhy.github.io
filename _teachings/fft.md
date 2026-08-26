@@ -55,7 +55,7 @@ description: This note records my understanding and insights into certain concep
 以下展示些我的效果图：
 
 <p align="center">
-  <img src="/assets/images/3.png" alt="hiddenimage" style="max-width: 80%; height: auto;">
+  <img src="/assets/images/3.png" alt="hiddenimage" style="max-width: 100%; height: auto;">
 </p>
 
 
