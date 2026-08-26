@@ -32,14 +32,9 @@ description: This note records my understanding and insights into certain concep
 | **相位 (Phase)** | 决定大面积区域/宏观主体的**位置与空间布局** | 决定局部边缘、细微纹理的**精确空间位置** |
 | **幅值 (Magnitude)** | 决定整体的**亮度分布与基调能量** | 决定边缘与纹理的**对比度、锐度与丰富度** |
 
+后面又读到几篇做onestep T2I的
 
 
-This course provides a comprehensive introduction to data science principles and practices. Students will:
-
-- Learn the end-to-end data science workflow
-- Gain practical experience with data manipulation tools
-- Develop skills in data visualization and communication
-- Apply statistical methods to derive insights from data
 
 ## Prerequisite
 
