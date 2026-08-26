@@ -34,15 +34,18 @@ description: This note records my understanding and insights into certain concep
 
 后面又读到几篇做onestep T2I的文章，于是开始转向从速度的角度做improve，在和老师的几次讨论下觉得可以用onestep的模型去试试能不能完成这个隐藏图任务，果然是可以的，基本idea就此形成
 
-## What I DO
+## What Did I Do
 
 我设计的这个架构还是比较朴素的，这也是听了老师给我的建议（他说一般领域内的第一个方法，通常比较设计上可以非常朴素的，不要把它想的很难）。而且onestep的T2I模型可以入手的地方实在不多
 
-简单来说，我设计了一个叫sspf的组件用来融合参考图的结构到噪声图中，然后分别在进入onestep的unet和unet的midblock使用sspf，具体流程如下：
+简单来说，我设计了一个叫sspf的组件用来融合参考图的结构到噪声图中，然后分别在进入onestep的unet前和unet的midblock使用sspf，具体流程如下：
 
 <p align="center">
   <img src="/assets/images/2.png" alt="hiddenimage" style="max-width: 80%; height: auto;">
 </p>
 
+我的这个sspf融合是和频域相关的，和ptd不一样的是，我只取了参考图的**低频**相位，而不是全部相位，因为单步生成不像多步去噪那样可以有很多地方做refine，如果取了全部相位，那么会导致结果图严重失去视觉平衡效果（ref图会很突兀）
+
+在midblock重新使用sspf也是为了让图像的最终效果更好：如果仅在最开始用sspf，由于图像的分辨率较高，phase展示的结构边缘信息会非常明显，导致最终生图出现不自然的怪异边缘伪影。相反，midblock他的分辨度是整个去噪过程中最低的，于是我就在midblock在用一次sspf，这样能够显著圆滑原本生硬的边界
 
 ## Textbooks
