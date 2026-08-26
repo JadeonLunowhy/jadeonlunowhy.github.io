@@ -52,4 +52,12 @@ description: This note records my understanding and insights into certain concep
 
 至于最终生成图的效果，我还是很惊喜的，OnePhase生成的图像效果在多项指标上都远超ptdiffusion，也进行了userstudy，具体的实验在文章中写的比较详细，我就不再描述。
 
-## Textbooks
+以下展示些我的效果图：
+
+<p align="center">
+  <img src="/assets/images/3.png" alt="hiddenimage" style="max-width: 80%; height: auto;">
+</p>
+
+
+## Reflection and Summary
+
