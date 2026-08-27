@@ -25,7 +25,8 @@ module.exports = {
     },
   },
   use: {
-    baseURL: "http://127.0.0.1:4000/al-folio",
+    baseURL: process.env.PLAYWRIGHT_BASE_URL || "http://127.0.0.1:4000/al-folio",
+    channel: process.env.PLAYWRIGHT_CHANNEL || undefined,
     screenshot: "only-on-failure",
     trace: "retain-on-failure",
   },
@@ -41,6 +42,7 @@ module.exports = {
       name: "mobile",
       use: {
         ...devices["iPhone 12"],
+        ...(process.env.PLAYWRIGHT_CHANNEL ? { browserName: "chromium" } : {}),
       },
     },
   ],

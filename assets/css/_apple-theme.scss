@@ -1,0 +1,572 @@
+/*******************************************************************************
+ * Apple-inspired site presentation
+ *
+ * This layer intentionally changes presentation only. Page structure, content,
+ * Liquid templates, and al-folio component behavior continue to come from the
+ * pinned al_folio_core theme.
+ ******************************************************************************/
+
+:root {
+  --global-bg-color: #fbfbfd;
+  --global-code-bg-color: #f5f5f7;
+  --global-text-color: #1d1d1f;
+  --global-text-color-light: #6e6e73;
+  --global-theme-color: #0071e3;
+  --global-hover-color: #0077ed;
+  --global-hover-text-color: #ffffff;
+  --global-footer-bg-color: #f5f5f7;
+  --global-footer-text-color: #6e6e73;
+  --global-footer-link-color: #1d1d1f;
+  --global-divider-color: rgba(0, 0, 0, 0.1);
+  --global-card-bg-color: #ffffff;
+  --global-newsletter-bg-color: #ffffff;
+  --global-newsletter-text-color: #1d1d1f;
+  --apple-nav-bg: rgba(251, 251, 253, 0.82);
+  --apple-surface-muted: #f5f5f7;
+  --apple-border: rgba(0, 0, 0, 0.1);
+  --apple-shadow-rest: 0 2px 10px rgba(0, 0, 0, 0.04), 0 14px 38px rgba(0, 0, 0, 0.06);
+  --apple-shadow-hover: 0 4px 14px rgba(0, 0, 0, 0.06), 0 24px 52px rgba(0, 0, 0, 0.11);
+  --apple-radius-large: 28px;
+  --apple-radius-medium: 20px;
+  --apple-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+html[data-theme="dark"] {
+  --global-bg-color: #000000;
+  --global-code-bg-color: #1d1d1f;
+  --global-text-color: #f5f5f7;
+  --global-text-color-light: #a1a1a6;
+  --global-theme-color: #2997ff;
+  --global-hover-color: #40a9ff;
+  --global-hover-text-color: #000000;
+  --global-footer-bg-color: #1d1d1f;
+  --global-footer-text-color: #a1a1a6;
+  --global-footer-link-color: #f5f5f7;
+  --global-divider-color: rgba(255, 255, 255, 0.14);
+  --global-card-bg-color: #1d1d1f;
+  --global-newsletter-bg-color: #1d1d1f;
+  --global-newsletter-text-color: #f5f5f7;
+  --apple-nav-bg: rgba(0, 0, 0, 0.78);
+  --apple-surface-muted: #1d1d1f;
+  --apple-border: rgba(255, 255, 255, 0.14);
+  --apple-shadow-rest: 0 2px 12px rgba(0, 0, 0, 0.28), 0 18px 42px rgba(0, 0, 0, 0.3);
+  --apple-shadow-hover: 0 4px 18px rgba(0, 0, 0, 0.34), 0 28px 60px rgba(0, 0, 0, 0.46);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding-bottom: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", "Segoe UI", sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: -0.012em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body.fixed-top-nav {
+  padding-top: 52px;
+}
+
+body > .container[role="main"] {
+  padding-top: clamp(2rem, 5vw, 4.5rem);
+  padding-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+::selection {
+  color: #ffffff;
+  background: #0071e3;
+}
+
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--global-theme-color) 45%, transparent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand,
+.card-title,
+.course-title {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", "Segoe UI", sans-serif;
+  text-wrap: balance;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+}
+
+h2,
+h3,
+h4 {
+  letter-spacing: -0.03em;
+}
+
+p,
+li {
+  text-wrap: pretty;
+}
+
+.post-header {
+  margin-bottom: clamp(2.75rem, 6vw, 5.5rem);
+}
+
+.post-title,
+.post-header > h1 {
+  max-width: 14ch;
+  margin-bottom: 0.65rem;
+  font-size: clamp(3rem, 7vw, 4.75rem) !important;
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.post-description {
+  max-width: 42rem;
+  margin-top: 1.25rem;
+  color: var(--global-text-color-light);
+  font-size: clamp(1.125rem, 2.2vw, 1.35rem);
+  line-height: 1.35;
+  letter-spacing: -0.022em;
+}
+
+.post article > h2,
+.post article > section > h2 {
+  margin-top: clamp(2.75rem, 6vw, 5rem);
+  margin-bottom: 1.2rem;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.08;
+}
+
+.post article > h3 {
+  margin-top: 2.25rem;
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+}
+
+a {
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 0.06em;
+}
+
+// Replace legacy inline accent colors with the site's single visual accent.
+.post article span[style*="color"] {
+  color: var(--global-theme-color) !important;
+}
+
+/* Navigation */
+#navbar.navbar {
+  min-height: 52px;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-bottom: 1px solid var(--apple-border);
+  background-color: var(--apple-nav-bg);
+  box-shadow: none;
+  opacity: 1;
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+
+#navbar > .container {
+  min-height: 52px;
+}
+
+#navbar .navbar-brand {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+
+#navbar .navbar-nav .nav-item .nav-link {
+  position: relative;
+  padding: 0.95rem 0.72rem 0.8rem;
+  color: var(--global-text-color);
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  transition: color 160ms ease;
+}
+
+#navbar .navbar-nav .nav-item.active > .nav-link {
+  color: var(--global-theme-color);
+  font-weight: 500;
+}
+
+#navbar .navbar-nav .nav-item.active > .nav-link::after {
+  content: "";
+  position: absolute;
+  right: 0.72rem;
+  bottom: 0.48rem;
+  left: 0.72rem;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+#light-toggle,
+#search-toggle {
+  border-radius: 999px;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease;
+}
+
+#light-toggle:hover,
+#search-toggle:hover {
+  background-color: color-mix(in srgb, var(--global-text-color) 7%, transparent);
+}
+
+/* Shared premium surfaces */
+.projects .card,
+.course-item,
+.cv .card {
+  border: 1px solid var(--apple-border);
+  border-radius: var(--apple-radius-large);
+  background-color: var(--global-card-bg-color);
+  box-shadow: var(--apple-shadow-rest);
+}
+
+.projects .card,
+.course-item {
+  overflow: hidden;
+  transition:
+    transform 360ms var(--apple-ease),
+    box-shadow 360ms var(--apple-ease),
+    border-color 240ms ease;
+}
+
+.projects .card:hover,
+.course-item:hover {
+  border-color: color-mix(in srgb, var(--global-theme-color) 22%, var(--apple-border));
+  box-shadow: var(--apple-shadow-hover);
+  transform: translateY(-6px);
+}
+
+/* Projects */
+.projects h2.category,
+.publications h2.bibliography,
+.year {
+  margin-top: clamp(2.5rem, 6vw, 4.5rem);
+  margin-bottom: 1.35rem;
+  padding: 0 0 0.8rem;
+  border-top: 0;
+  border-bottom: 1px solid var(--apple-border);
+  color: var(--global-text-color-light);
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.projects .row {
+  row-gap: 0.75rem;
+}
+
+.projects .col {
+  padding-bottom: 1.25rem;
+}
+
+.projects .card figure {
+  margin: 0;
+  overflow: hidden;
+  background: var(--apple-surface-muted);
+}
+
+.projects .card img {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  transition: transform 700ms var(--apple-ease);
+}
+
+.projects .card:hover img {
+  transform: scale(1.025);
+}
+
+.projects .card .card-body {
+  padding: 1.65rem 1.65rem 1.8rem;
+}
+
+.projects .card .card-title {
+  margin-bottom: 0.65rem;
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  transition: color 180ms ease;
+}
+
+.projects .card .card-text {
+  margin-bottom: 0;
+  color: var(--global-text-color-light);
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+/* About */
+.profile img {
+  border: 1px solid var(--apple-border);
+  border-radius: var(--apple-radius-large);
+  box-shadow: var(--apple-shadow-rest);
+}
+
+.profile .more-info {
+  margin-top: 1rem;
+  color: var(--global-text-color-light);
+  font-family: inherit;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+/* Publications */
+.publications {
+  margin-top: 0;
+}
+
+.publications ol.bibliography li {
+  margin-bottom: 1.25rem;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  border: 1px solid var(--apple-border);
+  border-radius: var(--apple-radius-medium);
+  background: var(--global-card-bg-color);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.045);
+}
+
+html[data-theme="dark"] .publications ol.bibliography li {
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.24);
+}
+
+.publications ol.bibliography li .preview,
+.publications ol.bibliography li .preview img,
+.publications ol.bibliography li video.preview {
+  border-radius: 12px;
+}
+
+.publications ol.bibliography li .title {
+  margin-bottom: 0.35rem;
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.publications ol.bibliography li .author {
+  color: var(--global-text-color-light);
+  line-height: 1.45;
+}
+
+.publications ol.bibliography li .abbr abbr,
+.publications ol.bibliography li .links a.btn {
+  border-radius: 999px;
+}
+
+.publications ol.bibliography li .links a.btn {
+  border-color: var(--apple-border);
+  background: var(--apple-surface-muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+  transition:
+    color 160ms ease,
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+
+.publications ol.bibliography li .hidden.open {
+  margin-top: 0.8rem;
+  border: 0 !important;
+  border-radius: 14px;
+  background: var(--apple-surface-muted);
+}
+
+/* Notes / courses */
+.courses {
+  margin-top: 0;
+}
+
+.course-list {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: 1.25rem;
+}
+
+.course-item {
+  padding: 1.5rem;
+}
+
+.course-title {
+  margin-bottom: 0.65rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+
+.course-meta,
+.course-description {
+  color: var(--global-text-color-light);
+  font-size: 0.92rem;
+}
+
+/* CV and long-form content */
+.cv .card {
+  margin-bottom: 1.25rem;
+  overflow: hidden;
+}
+
+.cv .card .list-group-item {
+  padding: 1rem 1.25rem;
+}
+
+blockquote {
+  border-width: 0 0 0 3px;
+  border-radius: 0 var(--apple-radius-medium) var(--apple-radius-medium) 0;
+  background: var(--apple-surface-muted);
+}
+
+pre,
+code,
+.highlight {
+  border-radius: 12px;
+}
+
+table:not(.table) {
+  width: 100%;
+}
+
+table:not(.table) td,
+table:not(.table) th {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+/* Footer */
+footer.fixed-bottom,
+footer.sticky-bottom {
+  border-top: 1px solid var(--apple-border);
+  background-color: color-mix(in srgb, var(--global-footer-bg-color) 92%, transparent);
+  backdrop-filter: saturate(160%) blur(16px);
+  -webkit-backdrop-filter: saturate(160%) blur(16px);
+}
+
+footer.fixed-bottom {
+  position: static !important;
+  inset: auto !important;
+  width: 100%;
+}
+
+footer.fixed-bottom .container,
+footer.sticky-bottom .container {
+  color: var(--global-footer-text-color);
+  letter-spacing: -0.005em;
+}
+
+#back-to-top {
+  border: 1px solid var(--apple-border);
+  border-radius: 999px !important;
+  box-shadow: var(--apple-shadow-rest);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+@media (max-width: 767.98px) {
+  body {
+    font-size: 1rem;
+  }
+
+  body > .container[role="main"] {
+    padding-top: 2rem;
+  }
+
+  .post-header {
+    margin-bottom: 2.75rem;
+  }
+
+  .post-title,
+  .post-header > h1 {
+    font-size: clamp(2.75rem, 14vw, 4rem) !important;
+  }
+
+  #navbar .navbar-collapse-main {
+    margin: 0.25rem 0 0.75rem;
+    padding: 0.65rem;
+    border: 1px solid var(--apple-border);
+    border-radius: 16px;
+    background: var(--global-card-bg-color);
+    box-shadow: var(--apple-shadow-rest);
+  }
+
+  #navbar .navbar-nav .nav-item {
+    width: 100%;
+  }
+
+  #navbar .navbar-nav .nav-item .nav-link {
+    width: 100%;
+    padding: 0.65rem 0.75rem;
+    border-radius: 10px;
+    font-size: 1rem;
+  }
+
+  #navbar .navbar-nav .nav-item.active > .nav-link {
+    background: var(--apple-surface-muted);
+  }
+
+  #navbar .navbar-nav .nav-item.active > .nav-link::after {
+    display: none;
+  }
+
+  .profile {
+    margin-bottom: 2rem;
+  }
+
+  .projects .card,
+  .course-item,
+  .profile img {
+    border-radius: 22px;
+  }
+
+  .projects .card .card-body {
+    padding: 1.35rem 1.35rem 1.5rem;
+  }
+
+  .publications ol.bibliography li {
+    padding: 1.1rem;
+    border-radius: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .projects .card,
+  .projects .card:hover,
+  .projects .card img,
+  .projects .card:hover img,
+  .course-item,
+  .course-item:hover {
+    transform: none !important;
+  }
+}
