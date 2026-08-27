@@ -10,7 +10,7 @@ related_publications: false
 
 A **C++17 client-server application** for querying and managing university course schedules. The system uses a lightweight TCP protocol to connect console or GUI clients to a multithreaded server, with persistent timetable data stored in CSV format.
 
-[**View on GitHub →**](https://github.com/JadeonLunowhy/Timetable-Inquiry-System)
+[**View on GitHub**](https://github.com/JadeonLunowhy/Timetable-Inquiry-System)
 
 ### Highlights
 
@@ -39,5 +39,3 @@ CourseDatabase
 
 **Tech Stack:** C++17 · Winsock · TCP/IP · Multithreading · wxWidgets · CSV · AES-256-GCM
 
-```
-```

@@ -10,7 +10,7 @@ related_publications: false
 
 A **full-stack web application** for managing graduate school applications, from program discovery and document submission to application review and administrative management.
 
-[**View on GitHub →**](https://github.com/JadeonLunowhy/OAS)
+[**View on GitHub**](https://github.com/JadeonLunowhy/OAS)
 
 ### Highlights
 
@@ -39,5 +39,3 @@ Student / Admission Officer / Admin
 
 **Tech Stack:** PHP · MySQL · JavaScript · HTML/CSS · Apache · REST-style APIs
 
-```
-```
