@@ -2,7 +2,7 @@
 layout: page
 title: Pokémon Data Analytics Dashboard
 description: An interactive Streamlit dashboard for exploring Pokémon statistics, type patterns, capture difficulty, and legendary classification.
-img: assets/img/pokemon.png
+img: assets/img/pokemen.png
 importance: 3
 category: Undergraduate Coursework
 related_publications: false
