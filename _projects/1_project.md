@@ -2,7 +2,7 @@
 layout: page
 title: Course Timetable Inquiry System
 description: A multithreaded C++ client-server system for course schedule queries and administration over TCP.
-img: assets/img/12.jpg
+img: assets/img/time.png
 importance: 1
 category: Undergraduate Coursework
 related_publications: false
