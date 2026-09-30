@@ -142,6 +142,25 @@ li {
   letter-spacing: -0.022em;
 }
 
+// Keep the profile homepage compact without changing other page headings.
+body > .container[role="main"]:has(> .post > article > .profile) {
+  margin-top: 1.5rem !important;
+  padding-top: clamp(1rem, 2vw, 1.5rem);
+
+  > .post > .post-header {
+    margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+
+    > .post-title {
+      font-size: clamp(2.25rem, 5vw, 3.25rem) !important;
+      line-height: 1.08;
+    }
+
+    > .desc:empty {
+      display: none;
+    }
+  }
+}
+
 .post article > h2,
 .post article > section > h2 {
   margin-top: clamp(2.75rem, 6vw, 5rem);
