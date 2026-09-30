@@ -74,7 +74,8 @@ body.fixed-top-nav {
 }
 
 body > .container[role="main"] {
-  padding-top: clamp(2rem, 5vw, 4.5rem);
+  margin-top: 1.5rem !important;
+  padding-top: clamp(1rem, 2vw, 1.5rem);
   padding-bottom: clamp(4rem, 8vw, 7rem);
 }
 
@@ -120,16 +121,20 @@ li {
 }
 
 .post-header {
-  margin-bottom: clamp(2.75rem, 6vw, 5.5rem);
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+
+  > .desc:empty {
+    display: none;
+  }
 }
 
 .post-title,
 .post-header > h1 {
   max-width: 14ch;
   margin-bottom: 0.65rem;
-  font-size: clamp(3rem, 7vw, 4.75rem) !important;
+  font-size: clamp(2.25rem, 5vw, 3.25rem) !important;
   font-weight: 600;
-  line-height: 0.98;
+  line-height: 1.08;
   letter-spacing: -0.055em;
 }
 
@@ -140,25 +145,6 @@ li {
   font-size: clamp(1.125rem, 2.2vw, 1.35rem);
   line-height: 1.35;
   letter-spacing: -0.022em;
-}
-
-// Keep the profile homepage compact without changing other page headings.
-body > .container[role="main"]:has(> .post > article > .profile) {
-  margin-top: 1.5rem !important;
-  padding-top: clamp(1rem, 2vw, 1.5rem);
-
-  > .post > .post-header {
-    margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
-
-    > .post-title {
-      font-size: clamp(2.25rem, 5vw, 3.25rem) !important;
-      line-height: 1.08;
-    }
-
-    > .desc:empty {
-      display: none;
-    }
-  }
 }
 
 .post article > h2,
@@ -506,16 +492,7 @@ footer.sticky-bottom .container {
   }
 
   body > .container[role="main"] {
-    padding-top: 2rem;
-  }
-
-  .post-header {
-    margin-bottom: 2.75rem;
-  }
-
-  .post-title,
-  .post-header > h1 {
-    font-size: clamp(2.75rem, 14vw, 4rem) !important;
+    padding-top: 1rem;
   }
 
   #navbar .navbar-collapse-main {
