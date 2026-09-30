@@ -74,8 +74,8 @@ body.fixed-top-nav {
 }
 
 body > .container[role="main"] {
-  margin-top: 1.5rem !important;
-  padding-top: clamp(1rem, 2vw, 1.5rem);
+  margin-top: 0.5rem !important;
+  padding-top: 0.5rem;
   padding-bottom: clamp(4rem, 8vw, 7rem);
 }
 
@@ -492,7 +492,7 @@ footer.sticky-bottom .container {
   }
 
   body > .container[role="main"] {
-    padding-top: 1rem;
+    padding-top: 0.5rem;
   }
 
   #navbar .navbar-collapse-main {
